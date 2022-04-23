@@ -29,7 +29,7 @@ func UrlDownload(url string, localName string, localRoot string, downloaderPath 
 	return true
 }
 
-// 调用m3u8下载器下载url
+// 调用m3u8下载器下载
 func M3u8DownloaderUse(command string, param1 string, param2 string) bool {
 	shell_command := exec.Command(command, param1, param2)
 	stdout, err := shell_command.StdoutPipe()
