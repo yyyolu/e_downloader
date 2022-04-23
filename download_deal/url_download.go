@@ -15,7 +15,7 @@ func UrlDownload(url string, localName string, localRoot string, downloaderPath 
 	// 下载完成后的main.ts会生成在当前工作目录下
 	param2 := "-o=."
 	if !M3u8DownloaderUse(command, param1, param2) {
-		// fmt.Println("文件下载失败")
+		fmt.Println("文件下载失败")
 		return false
 	}
 	// 对文件进行改名
@@ -23,7 +23,7 @@ func UrlDownload(url string, localName string, localRoot string, downloaderPath 
 	path := "./main.ts"
 	localName = localName + ".mp4"
 	if !FileNameChange(path, localName) {
-		// fmt.Println("文件改名失败")
+		fmt.Println("文件改名失败")
 		return false
 	}
 	return true
@@ -55,7 +55,7 @@ func M3u8DownloaderUse(command string, param1 string, param2 string) bool {
 func FileNameChange(path string, dstpath string) bool {
 	err := os.Rename(path, dstpath)
 	if err != nil {
-		// fmt.Println("文件名称更改失败")
+		fmt.Println("文件名称更改失败")
 		// os.Exit(-1)
 		return false
 	} else {

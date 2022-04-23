@@ -21,6 +21,7 @@ func main() {
 	downloaderPath := list[2]
 	// 创建根目录文件夹
 	root, temp := filedeal.RootMkdir(path)
+	// filedeal.RootMkdir(path)
 	if temp {
 		// 文件处理
 		filedeal.FileDeal(path, root, DomainHeader, downloaderPath)

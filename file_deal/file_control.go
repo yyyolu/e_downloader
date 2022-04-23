@@ -14,8 +14,15 @@ import (
 
 // 创建根目录文件夹
 func RootMkdir(path string) (string, bool) {
+	var numPath1 int
+	if filepath.IsAbs(path) {
+		// 为绝对路径
+		numPath1 = strings.LastIndex(path, "/")
+		path = path[numPath1+1:]
+	}
 	// 获取文件名
 	num1 := strings.LastIndex(path, ".txt")
+	// 此处需要判断用户传的是绝对路径还是临时路径
 	// 获取文件名，以此作为根目录
 	urlName := path[:num1]
 	// 获取当前工作目录
